@@ -8,7 +8,7 @@ from typing import List
 
 def filasParecidas(matriz: List[List[int]]) -> bool :
   for n in matriz:
-    if filasParecidasAanterior(matriz,n):
+    if filasParecidasAanterior(matriz,n): ## Acá la estoy flasheando 
       return True
   return False
 
