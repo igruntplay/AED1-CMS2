@@ -13,8 +13,8 @@ test_meseta_mas_larga() {
         echo "FAILED: Input: $input - Expected: $expected - Result: $result"
     fi
 }
-
 # Ejecutar pruebas
+test_meseta_mas_larga "1 1 1 3 3 3 3 4 4 4 4 4" "5"
 test_meseta_mas_larga "1 1 2 2 2 3 3 3 3" "4"
 test_meseta_mas_larga "1 1 1 2 2 2 2 3 3" "4"
 test_meseta_mas_larga "1 1 1 1 2 2 2 2 2" "5"

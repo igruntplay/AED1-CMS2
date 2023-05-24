@@ -4,14 +4,17 @@ from typing import List
 # l: List[int]  <--Este es un ejemplo para una lista de enteros.
 # Respetar esta sintaxis, ya que el CMS dirá que no pasó ningún test si usan otra notación.
 def mesetaMasLarga(l: List[int]) -> int :
-    longitud_maxima = 0
+    longitudMaxima:int = 0
     for i in range(len(l)): # Itero sobre los indices de la lista desde cero
         for j in range(i, len(l)): # Recorre de j hasta i
-            if todosIguales(l, i, j):
-                longitud_meseta = j - i + 1 # si se cumple actualiza
-                if longitud_meseta > longitud_maxima:
-                    longitud_maxima = longitud_meseta
-    return longitud_maxima
+            # longitudMeseta es la longitud de la sub-lista actual que se verifica.
+            longitudMeseta:int = j - i + 1
+            if hayMesetaDeLong(l, longitudMeseta) and not hayMesetaDeLong(l, longitudMeseta + 1):
+              # Actualizamos la longitud de la meseta si se cumple la condición    
+                longitudMeseta:int = j - i + 1 # si se cumple actualiza
+                if longitudMeseta > longitudMaxima:
+                    longitudMaxima = longitudMeseta
+    return longitudMaxima
 # Verifica que exista la meseta de la longitud en la lista
 def hayMesetaDeLong(l: List[int],n:int)-> bool :
   for i in range(len(l)):
