@@ -4,11 +4,9 @@ from typing import List
 # l: List[int]  <--Este es un ejemplo para una lista de enteros.
 # Respetar esta sintaxis, ya que el CMS dirá que no pasó ningún test si usan otra notación.
 
-# ESTA INCOMPLETO!!
-
 def filasParecidas(matriz: List[List[int]]) -> bool :
-  for n in matriz:
-    if filasParecidasAanterior(matriz,n): ## Acá la estoy flasheando 
+  for n in range(0, len(matriz)):
+    if filasParecidasAanterior(matriz,n):
       return True
   return False
 
@@ -20,7 +18,7 @@ def filasParecidasAanterior(matriz:List[List[int]], n:int)-> bool :
 
 def filaAnteriorMasN(matriz: List[List[int]], i:int, n:int) -> bool : 
   for j in range(len(matriz[0])):
-    if matriz[i][j] != matriz[i-j][j]+n:
+    if matriz[i][j] != matriz[i-1][j]+n:
       return False
   return True
 
